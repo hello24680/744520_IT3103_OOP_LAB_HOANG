@@ -1,0 +1,13 @@
+Bài 6.1:
+1.What happens if users choose “Cancel”?
+
+trả lời: -khi chọn "cancel" thì giá trị của biến "option" là bằng 2 mà khi qua toán tử "?:" thì sẽ coi 2 là ngược lại của 1 nên sẽ trả về kết quả là "No".
+
+
+2.How to customize the options to users, e.g. only two options: “Yes” and “No”, OR “I do”
+and “I don’t”.
+
+trả lời: -có thể sử dụng code thay thế như sau : int option = JOptionPane.showConfirmDialog(null,"Do you want to change to the first class ticket?",null, JOptionPane.YES_NO_OPTION);
+
+Nx:truyền thêm vào phương thức showConfirmDialog giá trị "null" cho phần title và "JOptionPane.YES_NO_OPTION" cho phần optionType sẽ chỉ cho 2 option "yes" và "No" thay vì 3 option như thông thường.
+
