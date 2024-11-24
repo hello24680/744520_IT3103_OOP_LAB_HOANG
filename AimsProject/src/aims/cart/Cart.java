@@ -1,3 +1,6 @@
+package aims.cart;
+
+import aims.disc.DigitalVideoDisc;
 import java.lang.*;
 
 public class Cart {
@@ -68,7 +71,7 @@ public class Cart {
     */
 
 
-    public void addDigitalVideoDisc(DigitalVideoDisc dvd1,DigitalVideoDisc dvd2){
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2){
         int k = 1; //danh dau dvd nao se dc add => k = 1 la dvd 1, k = 2 la dvd 2
         for(int i =0; i < 20; i++) {
             if (qtyOrdered != 20) {
