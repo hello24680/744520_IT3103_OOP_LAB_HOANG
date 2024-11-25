@@ -1,7 +1,8 @@
 package hust.soict.hedspi.aims;
 
-import hust.soict.hedspi.aims.cart.*;
-import hust.soict.hedspi.aims.disc.*;
+
+import hust.soict.hedspi.aims.Cart.Cart;
+import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
 
 
 //import java.*;
