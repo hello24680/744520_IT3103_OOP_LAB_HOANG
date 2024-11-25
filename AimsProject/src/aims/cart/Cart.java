@@ -122,4 +122,20 @@ public class Cart {
         return cost;
     }
 
+        public void PrintCart(){
+            System.out.println("***********************CART***********************");
+            System.out.println("Ordered Items:");
+
+            int stt = 1;//in ra man hinh dvd theo stt tang dan
+            for(int i = 0;i< 20;i++){
+                if(itemsOrdered[i] != null){
+                    System.out.println(stt + ".DVD" + " - " + itemsOrdered[i].toString());
+                    stt++;
+                }
+            }
+
+            System.out.println("Total cost: " + totalCost() + "$");
+            System.out.println("***************************************************");
+        }
+
 }

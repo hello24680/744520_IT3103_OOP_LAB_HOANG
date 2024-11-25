@@ -53,5 +53,12 @@ public class Aims {
         DigitalVideoDisc two_dvd0 = new DigitalVideoDisc("two_dvd0");
         DigitalVideoDisc two_dvd1 = new DigitalVideoDisc("two_dvd1");
         anOrder.addDigitalVideoDisc(two_dvd0,two_dvd1);
+
+        //test id
+        System.out.println(two_dvd0.getId());
+        System.out.println(two_dvd1.getId());
+
+        //test print cart
+        anOrder.PrintCart();
     }
 }
