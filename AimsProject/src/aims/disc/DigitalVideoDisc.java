@@ -98,4 +98,12 @@ public class DigitalVideoDisc {
         }
         return dvd_print + ": " + this.cost + "$";
     }
+
+    public boolean isMatch(String titleToFind){
+        if(this.title == titleToFind){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
