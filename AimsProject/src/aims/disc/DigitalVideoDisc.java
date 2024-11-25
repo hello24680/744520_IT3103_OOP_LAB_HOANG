@@ -4,8 +4,8 @@ public class DigitalVideoDisc {
     private String title;
     private String category;
     private String director;
-    private int length;
-    private float cost;
+    private int length = 0;
+    private float cost = 0;
     private int id;
 
     private static int nbDigitalVideoDiscs = 0;
@@ -75,5 +75,27 @@ public class DigitalVideoDisc {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+
+    @Override
+    public String toString() {
+        String dvd_print = this.title;
+
+        if(this.category != null){
+            dvd_print += " - ";
+            dvd_print += this.category;
+        }
+
+        if(this.director != null){
+            dvd_print += " - ";
+            dvd_print += this.director;
+        }
+
+        if(this.length != 0){
+            dvd_print += " - ";
+            dvd_print += this.length;
+        }
+        return dvd_print + ": " + this.cost + "$";
     }
 }
