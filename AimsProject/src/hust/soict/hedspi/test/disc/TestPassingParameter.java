@@ -15,12 +15,13 @@ public class TestPassingParameter {
         System.out.println("Jungle dvd title: " + jungleDVD.getTitle());
     }
 
-
+    /*
     public static void swap(Object d1, Object d2) {
         Object temp = d1;
         d1 = d2;
         d2 = temp;
     }
+    */
 
 
 
@@ -30,14 +31,15 @@ public class TestPassingParameter {
         dvd = new DigitalVideoDisc(oldTitle);
     }
 
-    /*
+
+
     public static void swap(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
         String tmp1 = dvd1.getTitle();
         String tmp2 = dvd2.getTitle();
         dvd1.setTitle(tmp2);
         dvd2.setTitle(tmp1);
     }
-    */
+
 
 
 }
