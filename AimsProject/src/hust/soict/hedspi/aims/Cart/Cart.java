@@ -8,7 +8,7 @@ public class Cart {
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
     int qtyOrdered =0;
 
-    public void addDigitalVideoDisc(hust.soict.hedspi.aims.disc.DigitalVideoDisc disc){
+    public void addDigitalVideoDisc(DigitalVideoDisc disc){
         for(int i =0; i < 20; i++) {
             if (qtyOrdered != 20) {
                 if(itemsOrdered[i] == null) {
