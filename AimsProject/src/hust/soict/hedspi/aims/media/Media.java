@@ -1,6 +1,7 @@
 package hust.soict.hedspi.aims.media;
 
 
+import javax.swing.*;
 import java.util.Comparator;
 
 public abstract class Media implements Comparable<Media> {
@@ -36,9 +37,15 @@ public abstract class Media implements Comparable<Media> {
     }
 
 
-    boolean equals(Media mediaCheck){
+    boolean equals(Media mediaCheck) throws NullPointerException, ClassCastException{
         if(mediaCheck == null){
-            return false;
+            JOptionPane.showMessageDialog(null,"ERROR: Can't find Media null","ERROR",JOptionPane.ERROR_MESSAGE);
+            throw new NullPointerException("ERROR: Can't find Media null");
+        }
+
+        if(this.getClass() != mediaCheck.getClass()){
+            JOptionPane.showMessageDialog(null,"ERROR: ClassCastException","ERROR",JOptionPane.ERROR_MESSAGE);
+            throw new ClassCastException("ERROR: ClassCastException");
         }
 
         if(this.title == mediaCheck.title){

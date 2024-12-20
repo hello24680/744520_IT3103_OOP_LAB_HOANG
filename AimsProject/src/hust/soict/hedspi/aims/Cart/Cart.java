@@ -1,24 +1,28 @@
 package hust.soict.hedspi.aims.Cart;
 
 import hust.soict.hedspi.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-import java.util.ArrayList;
 import java.util.Collections;
 
 public class Cart {
 
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    //private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
-    public void addMedia(Media mediaNew){
+    public void addMedia(Media mediaNew) {
         for(Media tmp :itemsOrdered){
             if(tmp != null) {
                 if (tmp.getTitle() == mediaNew.getTitle()) {
-                    System.out.println("media da ton tai");
+                    //System.out.println("media da ton tai");
+                    //JOptionPane.showMessageDialog(null, "media da ton tai");
                     return;
                 }
             }
         }
         itemsOrdered.add(mediaNew);
+
     }
 
     public void removeMedia(Media mediaRemove){
@@ -93,5 +97,9 @@ public class Cart {
 
     public void empty() {
         itemsOrdered.clear();
+    }
+
+    public ObservableList<Media> getItemsOrdered() {
+        return itemsOrdered;
     }
 }

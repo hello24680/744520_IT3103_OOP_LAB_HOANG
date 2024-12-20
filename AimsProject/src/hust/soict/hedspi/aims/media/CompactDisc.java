@@ -1,5 +1,8 @@
 package hust.soict.hedspi.aims.media;
 
+import hust.soict.hedspi.aims.exception.PlayerException;
+
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +46,8 @@ public class CompactDisc extends Disc implements Playable {
     }
 
 
-    public int getLength_CD(){
+    @Override
+    public int getLength(){
         int count_length =0;
         for(Track tmp :tracks) {
             if (tmp != null) {
@@ -53,20 +57,31 @@ public class CompactDisc extends Disc implements Playable {
         return count_length;
     }
 
-    public void play() {
-        System.out.println("Playing CD: " + this.getTitle());
-        System.out.println("artist: " + artist);
-        System.out.println("Number track in CD: " + tracks.size());
+    public void play() throws PlayerException {
+        if (this.getLength() <= 0) {
+            JOptionPane.showMessageDialog(null,"ERROR: CD length is invalid! Length must be greater than 0.","ERROR",JOptionPane.ERROR_MESSAGE);
+            throw new PlayerException("CD length is invalid! Length must be greater than 0.");
+        }else {
 
-        System.out.println("CD length: " + this.getLength_CD());
+            System.out.println("Playing CD: " + this.getTitle());
+            System.out.println("artist: " + artist);
+            System.out.println("Number track in CD: " + tracks.size());
 
-        //play each tracks
-        for(Track tmp :tracks){
-            if(tmp != null){
-                tmp.play();
+            System.out.println("CD length: " + this.getLength());
+
+
+            //play each tracks
+            for (Track tmp : tracks) {
+                if (tmp != null) {
+                    try {
+                        tmp.play();
+                    } catch (PlayerException e) {
+                        JOptionPane.showMessageDialog(null,"ERROR: An error occurred while playing the track in CD","ERROR",JOptionPane.ERROR_MESSAGE);
+                        System.err.println("An error occurred while playing the track in CD: " + e.getMessage());
+                    }
+                }
             }
         }
-
     }
 
 
@@ -83,9 +98,9 @@ public class CompactDisc extends Disc implements Playable {
             CD_print += this.getDirector();
         }
 
-        if(this.getLength_CD() != 0){
+        if(this.getLength() != 0){
             CD_print += " - ";
-            CD_print += this.getLength_CD();
+            CD_print += this.getLength();
         }
 
         if(this.artist != null){
